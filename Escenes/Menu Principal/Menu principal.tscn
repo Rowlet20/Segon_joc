@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Escenes/Menu Principal/Terra Invisible.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenes/Personatge.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Imatges/Menu_fons.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 145.5, 41.5 )
+
+[node name="Menu principal" type="Node2D"]
+
+[node name="Menu principal - Fons" type="Sprite" parent="."]
+position = Vector2( 511, 302 )
+scale = Vector2( 1.06667, 1.11852 )
+texture = ExtResource( 3 )
+
+[node name="Personatge" parent="." instance=ExtResource( 2 )]
+position = Vector2( 264, 432 )
+
+[node name="Terra Invisible" parent="." instance=ExtResource( 1 )]
+position = Vector2( 501, 464 )
+scale = Vector2( 1.84, 1 )
+
+[node name="Wall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1048, 258 )
+rotation = -1.5708
+
+[node name="Wall2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -28, 251 )
+rotation = 1.5708
+
+[node name="Play" type="Area2D" parent="."]
+position = Vector2( 678.75, 266.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Play"]
+position = Vector2( 1.75, -1 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Play" to="Personatge" method="_on_Play_body_entered"]
