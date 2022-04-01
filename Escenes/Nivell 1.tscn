@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Escenes/Grass Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenes/Personatge.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Escenes/Grass Corner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Escenes/Falling Ground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escenes/Menu Principal/Terra Invisible.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Escenes/Falling Corner.tscn" type="PackedScene" id=6]
 
 [node name="Nivell 1" type="Node2D"]
 
@@ -23,8 +25,47 @@ scale = Vector2( 4.5, 1 )
 position = Vector2( 285, 536 )
 scale = Vector2( -4.5, 1 )
 
+[node name="Invisible wall" parent="." instance=ExtResource( 5 )]
+position = Vector2( -30, 184 )
+rotation = 1.5708
+
 [node name="Ground" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1538, 502 )
 scale = Vector2( 1, 2 )
 
+[node name="Ground2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1896, 634 )
+
+[node name="Ground3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2596, 517 )
+
+[node name="Invisible wall" parent="Ground3" instance=ExtResource( 5 )]
+position = Vector2( -53, -200 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Grass Corner3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2760, 1300 )
+scale = Vector2( 4.5, 1 )
+
+[node name="Grass Corner4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2184, 1300 )
+scale = Vector2( -4.5, 1 )
+
 [node name="Falling Ground" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3376, 1361 )
+
+[node name="Falling Ground2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3737, 1523 )
+
+[node name="Falling Ground3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4122, 1464 )
+
+[node name="Falling Ground4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4458, 1315 )
+
+[node name="Ground4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4852, 1366 )
+
+[node name="Falling Corner" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5868, 1667 )
