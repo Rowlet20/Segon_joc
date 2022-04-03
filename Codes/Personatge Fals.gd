@@ -42,9 +42,11 @@ func anima(velocitat:Vector2):
 		animacio.play('Quiet')
 		
 
-func _on_Play_body_entered(body):
-	get_tree().change_scene("res://Escenes/Nivell 1.tscn")
+func _on_Rock_Area_body_entered(body):
+	position = Vector2(503,199)
 
+func _on_IRock_Area_body_entered(body):
+	position = Vector2(503,8300)
 
-func _on_Nivell_2_body_entered(body):
-	get_tree().change_scene("res://Escenes/Nivell 2.tscn")
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://Escenes/Nivell 3.tscn")
